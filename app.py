@@ -12,7 +12,7 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_TLS= False,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME="giorgioebenedetta@gmail.com", #os.environ['MAIL_USERNAME'],
+    MAIL_USERNAME="benedettaegiorgio@gmail.com", #os.environ['MAIL_USERNAME'],
     MAIL_PASSWORD="Benni*Alfio!231021", #os.environ['MAIL_PASSWORD'],
 )
 
@@ -45,7 +45,7 @@ def rsvp_email():
     with app.app_context():
         msg1 = Message(subject="Nuovo RSVP ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
-                      recipients=["giorgioebenedetta@gmail.com"],
+                      recipients=["benedettaegiorgio@gmail.com"],
                       body="Nome e cognome: {}\nE-mail: {}\nNumero adulti: {}\nNumero bambini: {}\nNumero neonati: {}\nEventuali note: {}".format(name, email, adults, kids, babies, notes))
 
         mail.send(msg1)
@@ -67,7 +67,7 @@ def send_message():
     with app.app_context():
         msg1 = Message(subject="Nuovo regalo ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
-                      recipients=["giorgioebenedetta@gmail.com"],
+                      recipients=["benedettaegiorgio@gmail.com"],
                       body=text)
 
         mail.send(msg1)
