@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Site for the wedding of Benni&Alfio">
+  <meta name="author" content="Alfio">
+
+  <title>Alfio e Benni{{ page_title }}</title>
+  <link rel="shortcut icon" href="/static/images/site-icon.png">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/static/vendor/bootstrap/css/bootstrap.min.css">
+
+  <!-- Fonts and Google
+  <!- -<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/font-awesome.min.css">- ->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <!- - champagne e limousine font- ->
+  <link href="//db.onlinewebfonts.com/c/4bc98977ba557db3b2f5bb66bff54e25?family=Champagne+&+Limousines" rel="stylesheet" type="text/css"/>
+  <!- - antro vectra font - ->
+  <link href="http://fonts.cdnfonts.com/css/antro-vectra" rel="stylesheet">
+  <!- - sax regular font - ->
+  <link href="//db.onlinewebfonts.com/c/a52678f563c78c6fc954b7ace30bc8e5?family=Dax" rel="stylesheet" type="text/css"/>
+  -->
+
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="/static/css/scrolling-nav.css">
+  <link rel="stylesheet" href="/static/css/general.css">
+  <link rel="stylesheet" href="/static/css/site-theme.css">
+
+  <!-- Additional css for this page -->
+  {% block additional_css %}
+  {% endblock %}
+</head>
+<body id="page-top"> <!-- onload="heigthAdjust()" onresize="heigthAdjust()"> -->
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-xl fixed-top" id="main-navbar">
+    <!-- before deploy check height of the navbar and modify the "85" into js/scrolling-nav.js -->
+    <div class="container-fluid">
+      {% block navbar_items %}
+      {% endblock %}
+    </div>
+  </nav>
+
+  {% block page_body %}
+  {% endblock %}
+
+  <!-- Footer -->
+  <footer class="py-2" id="made-by-footer">
+    <div class="container">
+    <p class="text-center">Made with <i class="fas fa-heart" style="color: red"></i> by <a class="light-link" href="https://www.mate.polimi.it/?view=pp&id=658&lg=it#ann">Alfio</a></p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/static/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom JavaScript for this theme -->
+  <script src="/static/js/scrolling-nav.js"></script>
+
+  <!-- Font-Awesome -->
+  <script src="https://kit.fontawesome.com/f3dd11cc6f.js" crossorigin="anonymous"></script>
+
+  <!-- Copy function -->
+  <script src="/static/js/copy-link.js" crossorigin="anonymous"></script>
+  
+  <!-- Additional js for this page -->
+  {% block additional_js %}{% endblock %}
+
+</body>
+</html>

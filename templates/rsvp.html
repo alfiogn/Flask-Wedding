@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+
+<!-- Additional css for this page -->
+{% block additional_css %}
+{% endblock %}
+
+
+<!-- Navbar links for this page -->
+{% block navbar_items %}
+  <a class="navbar-brand js-scroll-trigger" href="{{ url_for('home') }}">Alfio e Benni</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon">
+    <i class="fas fa-bars" style="color: var(--first-color); font-size:28px;"></i>
+  </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" aria-current="page" href="{{ url_for('home') }}">Torna alla home</a>
+      </li>
+      <li class="nav-item">
+      <button class="btn head-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'"><i class="fa fa-gift"></i> Lista Nozze</button>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+
+
+<!-- Page body -->
+{% block page_body %}
+  <section>
+  <div class="container">
+
+  <form class="needs-validation" id="formRSVP" novalidate>
+  
+  <!--nome e cognome-->
+    <div class="form-group">
+    <label for="Name">Nome e Cognome</i> </label>
+    <input type="text" class="form-control" id="Name" placeholder="oppure soprannome univocamente determinato" required>
+    <small class="form-text text-muted"></small>
+    <div class="valid-feedback">Ok!</div>
+    <div class="invalid-feedback">Per favore inserisci un nome.</div>
+
+    <!--indirizzo email-->
+    <label for="Email">Indirizzo e-mail</label>
+    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="nome.cognome@mail.com">
+    <small id="emailHelp" class="form-text text-muted">Non condivideremo il tuo indirizzo e-mail con terze parti.</small>
+    <div class="invalid-feedback">Per favore inserisci un indirizzo e-mail.</div>
+
+    <!-- ospiti -->
+    <div class="row">
+    <div class="col-lg">
+    <label for="Adults">Numero adulti</label>
+    <input class="form-control" id="Adults" type="number" min="1" max="10" data-bv-integer-message="Per favore inserisci un numero intero.">
+    </div>
+    <div class="col-lg">
+    <label for="Kids">Numero bambini (4-10 anni)</label>
+    <input class="form-control" id="Kids" type="number" min="0" max="10" data-bv-integer-message="Per favore inserisci un numero intero.">
+    </div>
+    <div class="col-lg">
+    <label for="Babies">Numero bambini (0-3 anni)</label>
+    <input class="form-control" id="Babies" type="number" min="0" max="10" data-bv-integer-message="Per favore inserisci un numero intero.">
+    </div>
+    </div>
+
+    <!-- Eventuali note -->
+    <div class="mb-3">
+    <label for="Notes" class="form-label">Note</label>
+    <textarea class="form-control" id="Notes" placeholder="Segnala eventuali allergie, intolleranze o preferenze alternative al menù di pesce." rows="3"></textarea>
+    </div>
+    </div>
+
+
+    <!-- gradimento -->
+
+    <!-- onclick="document.location='{{ url_for('thanks') }}'" -->
+    <button id="submitRSVP" type="submit" class="btn body-btn">Inviaci la risposta <i class="fas fa-paper-plane"></i></button>
+  <!---->
+  </form>
+  </div>
+  </section>
+{% endblock %}
+
+
+<!-- Additional js for this page -->
+{% block additional_js %}
+  <!-- JS for form validation -->
+  <script src="../static/js/rsvp-validation.js"></script>
+{% endblock %}

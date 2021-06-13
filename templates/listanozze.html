@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+
+<!-- Additional css for this page -->
+{% block additional_css %}
+  <link rel="stylesheet" type= "text/css" href="/static/css/listanozze.css">
+{% endblock %}
+
+
+<!-- Navbar links for this page -->
+{% block navbar_items %}
+  <a class="navbar-brand js-scroll-trigger" href="{{ url_for('home') }}">Alfio e Benni</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon">
+    <i class="fas fa-bars" style="color: var(--first-color); font-size:28px;"></i>
+  </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" aria-current="page" href="{{ url_for('home') }}">Torna alla home</a>
+      </li>
+      <li class="nav-item">
+      <button class="btn head-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'"><i class="fa fa-envelope"></i> RSVP</button>
+      <li>
+    </ul>
+  </div>
+{% endblock %}
+
+
+<!-- Page body -->
+{% block page_body %}
+  <section id="pictures-list">
+    <div class="container text-center">
+    <div id="freewall" class="free-wall"></div>
+  </section>
+  
+
+
+
+  <section id="thanks">
+    <div class="container text-center">
+      <h2 class="title">Grazie per il tuo contributo!</h2>
+      <h2 class="title"> </h2>
+      <h2 class="title"> </h2>
+      <h2 class="title"> </h2>
+      <h2 class="title"> </h2>
+      <p class="lead">Se non l'hai già fatto, facci sapere se parteciperai!</p>
+      <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'"><i class="fas fa-envelope"></i> RSVP</button>
+    </div>
+  </section>
+{% endblock %}
+
+
+<!-- Additional js for this page -->
+{% block additional_js %}
+  <script src="/static/js/freewall.js"></script>
+  <script src="/static/js/listanozze.js"></script>
+{% endblock %}

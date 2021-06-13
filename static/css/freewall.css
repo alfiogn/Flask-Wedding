@@ -1,0 +1,29 @@
+/* PHOTO GALLERY */
+/*
+.brick {
+	background-color: white;
+	float: left;
+	cursor: default;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+*/
+
+.free-wall {
+	margin: 15px;
+	padding-bottom: 50px;
+}
+
+.brick img {
+	margin: 0;
+	display: block;
+  cursor: pointer;
+}
+
+.brick img:hover {
+  opacity: 0.85;
+}
+
+

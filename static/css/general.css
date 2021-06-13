@@ -1,0 +1,82 @@
+/* Generic settings */
+:root {
+  /*--bar-color:        #000000;          [> black <]*/
+  /*--text-color:       #ffffff;          [> white <]*/
+  /*--dark-text-color:  var(--bar-color);   [> black <]*/
+  /*--head-color:       #bfbfbf;          [> light grey <]*/
+  /*--first-color:      #fadeff;          [> light pink <] */
+  /*--second-color:     #deffde;          [> light green <]*/
+  /*--bar-color:        rgb(0, 0, 0);*/
+  /*--text-color:       rgb(255, 255, 255);*/
+  /*--dark-text-color:  var(--bar-color);*/
+  /*--head-color:       rgb(200, 200, 200);*/
+  /*--first-color:      rgb(242, 204, 214);*/
+  /*--second-color:     rgb(213, 231, 216);*/
+  /*--alpha-7:          0.7;*/
+  --bar-color:        rgb(40, 49, 72);
+  --text-color:       rgb(255, 255, 255);
+  --dark-text-color:  rgb(24, 35, 46);
+  --dark-color:       rgb(35, 38, 39);
+  --head-color:       rgb(200, 200, 200);
+  --first-color:      rgb(255, 255, 254);
+  --second-color:     rgba(211, 224, 234);
+  --alpha-7:          0.7;
+}
+
+/* Font */
+@font-face {
+  font-family: proxima-nova;
+  src: url('/static/font/proxima_nova.ttf');
+}
+@font-face {
+  font-family: hearth-stone;
+  src: url('/static/font/Hearth Stone.ttf');
+}
+@font-face {
+  font-family: bacalisties;
+  src: url('/static/font/Bacalisties.ttf');
+}
+@font-face {
+  font-family: romantica;
+  src: url('/static/font/romantica-font.ttf');
+}
+@font-face {
+  font-family: antro-vectra;
+  src: url('/static/font/Antro_Vectra.otf');
+}
+@font-face {
+  font-family: antro-vectra;
+  src: url('/static/font/Antro_Vectra_Bolder.otf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: champagne-limousine;
+  src: url('/static/font/Champagne & Limousines.ttf');
+}
+@font-face {
+  font-family: champagne-limousine;
+  src: url('/static/font/Champagne & Limousines Bold.ttf');
+  font-weight: bold;
+}
+@font-face {
+  font-family: champagne-limousine;
+  src: url('/static/font/Champagne & Limousines Italic.ttf');
+  font-style: italic; /*, oblique;*/
+}
+@font-face {
+  font-family: champagne-limousine;
+  src: url('/static/font/Champagne & Limousines Bold Italic.ttf');
+  font-style: italic; /*, oblique;*/
+  font-weight: bold;
+}
+
+  /*--special-font:     'August Script Bold free', sans-serif;*/
+  /*--special-font:     'Antro Vectra', sans-serif;*/
+  /*--special-font:     'Dax', sans-serif;*/
+  /*--special-font:     "Tangerine", serif;*/
+
+:root {
+  --special-font: romantica;
+  --text-font: champagne-limousine;
+}
+

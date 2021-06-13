@@ -1,0 +1,311 @@
+body {
+  background-color: var(--first-color) !important;
+  margin: 0;
+  width: 100%;
+  font-family: var(--text-font) !important;
+  font-size: 1.5rem;
+}
+.bg-first, .bg-second, .bg-dark {
+  padding: 30px 0px 60px 0px !important;
+}
+.bg-first {
+  background-color: var(--first-color) !important;
+}
+.bg-second {
+  background-color: var(--second-color) !important;
+}
+.bg-dark {
+  background-color: var(--dark-color) !important;
+}
+
+
+
+/* Navigation Bar */
+#main-navbar, #made-by-footer, #navbarResponsive{
+  background-color: var(--bar-color) !important;
+  color: var(--text-color) !important;
+}
+.navbar-toggler, .navbar-toggler-icon {
+  border-color: var(--text-color) !important;
+  color: var(--text-color) !important;
+}
+#made-by-footer {
+  font-family: 'Courier New', monospace;
+  position: center bottom;
+}
+.navbar-brand {
+  font-size: 3rem !important;
+}
+.navbar-brand, .nav-link {
+  color: var(--text-color) !important;
+}
+.nav-link, .head-btn {
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-size: 1.5rem !important;
+}
+
+
+.navbar-brand, #site-title, .title, .subtitle {
+  font-family: var(--special-font);
+  /*letter-spacing: 5px;*/
+  /*font-feature-settings: "liga" on;*/
+  /*font-variant: common-ligatures discretionary-ligatures;*/
+  /*font-variant-ligatures: common-ligatures;*/
+  /*font-kerning: normal;*/
+}
+
+.lead {
+  font-size: 1.3rem !important;
+}
+
+/* Header */
+#site-cover {
+  width: 100%;
+  overflow: auto;
+  background-size: cover;
+  margin-top: 86px; 
+  background-repeat: no-repeat;
+  position: relative;
+  cursor: default;
+}
+#site-title {
+  border: 5px solid var(--text-color) !important;
+  padding: 15px;
+  width: 400px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.title {
+  margin-top: 0.5rem;
+  padding-top: 0.7rem;
+  font-size: 3.5rem !important;
+  margin-bottom: 1.2rem;
+}
+#ricevimento .title {
+  padding-top: 1.4rem;
+}
+#cerimonia .title {
+  padding-top: 1.4rem;
+}
+.subtitle {
+  margin-top: 0.3rem;
+  padding-top: 0.5rem;
+  font-size: 2.5rem !important;
+  margin-bottom: 0.8rem;
+}
+.blockquote {
+  margin-top: 0.2rem;
+  font-size: 1.5rem !important;
+  margin-bottom: 0.6rem;
+}
+/*blockquote.blockquote:before {
+  position: relative; /*absolute;* /
+  float: left;
+  font-size: 7em;
+  line-height: 1;
+  top: -20px;
+  left: 0;
+  content: "\201C";
+  color: #7a7a7a;
+}
+blockquote.blockquote:after {
+  position: relative; /*absolute;* /
+  float: right;
+  font-size: 7em;
+  line-height: 1;
+  top: -60px;
+  left: 20px;
+  content: "\201D";
+  color: #7a7a7a;
+}*/
+.blockquote-footer {
+  font-size: 1.5rem !important;
+}
+@media (max-width: 422px) {
+  #site-cover {
+    background-image: url( "/static/images/cover-alfio-benni-mobile.png" ) !important;
+    height: 500px;
+  }
+  #site-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 423px) {
+  #site-cover {
+    background-image: url( "/static/images/cover-alfio-benni-mobile.png" ) !important;
+    height: 625px;
+  }
+  #site-title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 576px) {
+  #site-cover {
+    background-image: url( "/static/images/cover-alfio-benni.png" ) !important;
+    height: 700px;
+  }
+  #site-title {
+    margin-left: auto;
+    margin-right: 123px;
+  }
+}
+@media (min-width: 840px) {
+  #site-cover {
+    height: 550px;
+  }
+}
+@media (min-width: 900px) {
+  #site-cover {
+    height: 600px;
+  }
+}
+@media (min-width: 1000px) {
+  #site-cover {
+    background-image: url( "/static/images/cover-alfio-benni-wide.png" ) !important;
+    height: 800px;
+  }
+}
+@media (min-width: 1200px) {
+  #site-cover {
+    background-image: url( "/static/images/cover-alfio-benni-wide.png" ) !important;
+    height: 1000px;
+  }
+}
+/*@media (min-width: 1300px) {*/
+  /*#ct-cerimonia, #ct-ricevimento {*/
+    /*max-width: 1300px;*/
+  /*}*/
+/*}*/
+
+
+/*Body stuff*/
+#cerimonia, #ricevimento, #glisposi, #contact, #sposify, #info {
+  padding-bottom: 0px !important;
+}
+#glisposi, #contact, #sposify, #info, #photogallery {
+  padding-top: 0.7rem !important;
+}
+#cerimonia, #ricevimento {
+  padding-top: 0px !important;
+}
+#cerimonia .col-lg .img-holder, #ricevimento .col-lg .img-holder {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  z-index: 0;
+  background-size: cover !important;
+  background-position: 50% 50% !important;
+}
+#cerimonia .event-info, #ricevimento .event-info {
+  padding-bottom: 150px !important;
+}
+@media (max-width: 991px) {
+  #cerimonia .event-info, #ricevimento .event-info {
+    padding-bottom: 50px !important;
+  }
+}
+
+#cerimonia .img-holder {
+  /*right: 0px;*/
+}
+#ricevimento .img-holder {
+  /*left: 0px;*/
+}
+.spouses-section {
+  max-width: 800px;
+}
+.spouses-frame {
+  /*min-width: 300px;
+  max-width: 500px;*/
+  box-sizing: border-box;
+  border: 5px solid var(--text-color) !important;
+  background-color: var(--text-color) !important;
+  width: 100%;
+  max-height: calc(1.2 * 800px);
+}
+.spouses-frame img {
+  width: 88.5%;
+  margin-top: 4%;
+  /*margin-bottom: 30%;*/
+}
+
+#sposify .title, #sposify .lead {
+  font-family: proxima-nova !important;
+  color: rgb(30, 215, 96) !important;
+  margin-bottom: 50px;
+}
+
+.dark-link, .dark-link:hover, .dark-link:active {
+  color: var(--dark-text-color);
+}
+.light-link, .light-link:hover, .light-link:active {
+  color: var(--text-color);
+}
+.copy-link:hover {
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+/* RSVP Form */
+#formRSVP {
+  font-size: 1.5rem;
+}
+label {
+  margin-top: 20px;
+}
+.form-control {
+  float: bottom;
+}
+.form-control.is-valid, .was-validated .form-control:valid {
+	border-color: rgba(0, 0, 0, 0);
+	background-image: none !important;
+	background-repeat: no-repeat;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid {
+	background-image: none !important;
+}
+.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+  box-shadow: 0 0 0 0.2rem rgba(200, 200, 200, 0.25) !important;
+	border-color: var(--bar-color);
+}
+
+/* Buttons */
+/*:active*/
+/*:focus*/
+/*:focus-visible*/
+/*:focus-within*/
+.head-btn {
+  color: var(--text-color) !important;
+  border-color: var(--first-color) !important;
+  margin-right: 5px;
+  text-transform: uppercase;
+}
+.head-btn:hover, .head-btn:active {
+  color: var(--bar-color) !important;
+  background-color: var(--first-color) !important;
+  border-color: var(--second-color) !important;
+}
+@media (max-width: 992px) {
+  .head-btn {
+    margin-top: 5px;
+  }
+}
+.body-btn {
+  /*z-index: 10;*/
+  color: var(--dark-text-color) !important;
+  border-color: var(--bar-color) !important;
+  margin: 5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 1.4rem !important;
+}
+.body-btn:hover, .body-btn:active {
+  color: var(--text-color) !important;
+  background-color: var(--bar-color) !important;
+  border-color: var(--bar-color) !important;
+}

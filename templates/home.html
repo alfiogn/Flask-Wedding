@@ -1,0 +1,280 @@
+{% extends "base.html" %}
+
+
+<!-- Additional css for this page -->
+{% block additional_css %}
+  <link rel="stylesheet" type= "text/css" href="/static/css/freewall.css"> 
+  <link rel="stylesheet" type= "text/css" href="/static/css/grid-gallery.css">
+{% endblock %}
+
+
+<!-- Navbar links for this page -->
+{% block navbar_items %}
+  <a class="navbar-brand js-scroll-trigger" href="#page-top">Alfio e Benni</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon">
+    <i class="fas fa-bars" style="color: var(--first-color); font-size:28px;"></i>
+  </span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#glisposi">Gli sposi</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#cerimonia">Cerimonia</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#ricevimento">Ricevimento</a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#viaggiodinozze">Viaggio di nozze</a>
+      </li> -->
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#info">Info</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link js-scroll-trigger" href="#photogallery">Photo gallery</a>
+      </li>
+      <li class="nav-item">
+      <button class="btn head-btn" onclick="document.location='{{ url_for('listanozze') }}'"><i class="fa fa-gift"></i> Lista Nozze</button>
+      </li>
+      <li class="nav-item">
+      <button class="btn head-btn" onclick="document.location='{{ url_for('rsvp') }}'"><i class="fa fa-envelope"></i> RSVP</button>
+      </li>
+    </ul>
+  </div>
+{% endblock %}
+
+
+<!-- Page body -->
+{% block page_body %}
+
+  <section class="bg-transparent" id="site-cover">
+    <!-- <div class="container text-right" id="site-title">
+      <h1>Alfio e Benni</h1>
+      <h1>23 Ottobre 2021</h1>
+    </div> -->
+  </section> 
+
+  <section class="bg-second">
+    <div class="container-fluid text-center">
+      <h1 class="title">Save the Date</h1>
+      <h2 class="subtitle">23 ottobre 2021</h2>
+      <!-- <p class="text-center subtitle" id="countdown"></p> -->
+    </div>
+    </section>
+
+    
+  <section class="bg-first">
+  <div class="container quotation">
+      <figure class="text-end">
+        <blockquote class="text-center blockquote">
+          <p>La Maddalena spaccò il vaso d’alabastro: “sciupò” il profumo, lo donò. Ogni dono è perdita. Amare veramente una persona appare come uno sciupare: se stessi, energie, tempo, calcolo, tornaconto, gusti. Gli altri, al gesto della Maddalena, scrollarono il capo: “Pazza! Senza criterio! Senza interesse!”. Ma in quella sala solo lei “viveva”, perché solo amare è vivere.</p>
+        </blockquote>
+        <figcaption class="blockquote-footer text-right">
+        Don Luigi Giussani
+        </figcaption>
+      </figure>
+    </div>
+    </section>
+  
+
+    <section id="glisposi" class="bg-second">
+    <div class="container-fluid text-center spouses-section">
+      <h2 class=title>Gli Sposi</h2>
+      <div class="row" style="margin-bottom: 20px">
+        <div class="col text-center" style="padding-left: 5px">
+          <div class="shadow bg-white rounded spouses-frame">
+            <img src="/static/images/cover-alfio-square.jpg" alt="Foto di Alfio">
+            <h3 class="subtitle" style="margin-top: 1.5rem; margin-bottom: 1rem"><strong>Alfio</strong></h3>
+          </div>
+        </div>
+        <div class="col text-center" style="padding-right: 5px">
+          <div class="shadow bg-white rounded spouses-frame">
+            <img src="/static/images/cover-benni-square.jpg" alt="Foto di Benni">
+            <h3 class="subtitle" style="margin-top: 1.5rem; margin-bottom: 1rem"><strong>Benni</strong></h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col text-center">
+            <!-- <h2 class="subtitle">La sposa</h2> -->
+            <!-- <h3><strong>Benni</strong></h3> -->
+            <p>Figo, bello, fotomodello.</p>
+          </div>
+          <div class="col text-center">
+            <!-- <h2 class="subtitle">Lo sposo</h2> -->
+            <!-- <h3><strong>Alfio</strong></h3> -->
+            <p>Mangia, dorme e porta a casa la pagnotta.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+
+    <section id="cerimonia" class="bg-first">
+    <div class="container-fluid text-left" id="ct-cerimonia">
+      <div class="row">
+        <div class="col-lg event-info text-left" style="padding: 0px">
+          <div style="margin-left: 10%">
+            <h2 class="title">Cerimonia</h2>
+            <p class="lead">Cattedrale di San Ciriaco</p>
+            <p class="lead">Sabato 23 ottobre 2021, Ore 11:30</p>
+            <p class="lead">Piazzale del Duomo, 9, Ancona (AN)</p>
+            <a class="btn body-btn" target="_blank" href="https://goo.gl/maps/A6jjquKbkrCZzsDH6"><i class="fas fa-map-marked-alt"></i> Vedi sulla mappa</a>
+            <a class="btn body-btn js-scroll-trigger" href="#info"><i class="fas fa-info"></i> Info parcheggio</a>
+          </div>
+        </div>
+        <div class="col-lg text-left" style="padding: 0px">
+          <div class="img-holder" style="background: url(/static/images/san-ciriaco.jpg)">
+          </div>
+          <!-- <img src="/static/images/san-ciriaco2.jpg" alt="San Ciriaco Cathedral" style="width: 100%"> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- col lg fa lo stack verticale delle colonne al di sotto di lg (992 px)
+       la scelta tra md/lg/xs etc. dipende un po' da come metti il testo-->
+  <section id="ricevimento" class="bg-second">
+    <div class="container-fluid text-right" id="ct-ricevimento">
+      <div class="row">
+        <div class="col-lg event-info order-1 order-lg-2 text-right" style="padding: 0px">
+          <div style="margin-right: 10%">
+            <h2 class="title">Ricevimento</h2>
+            <p class="lead">La Fonte - Seebay Hotel</p>
+            <p class="lead">Via Poggio, 160, Portonovo (AN)</p>
+            <a class="btn body-btn" target="_blank" href="https://goo.gl/maps/nXFSDZnox6WkmL5P9"><i class="fas fa-map-marked-alt"></i> Vedi sulla mappa</a>
+            <a class="btn body-btn js-scroll-trigger" href="#info"><i class="fas fa-info"></i> Info alberghi</a>
+          </div>
+        </div>
+        <div class="col-lg order-2 order-lg-1 text-right" style="padding: 0px">
+          <div class="img-holder" style="background: url(/static/images/ristorante.jpg)">
+          </div>
+        <!-- <div>
+          <img src="/static/images/ristorante2.jpg" alt="La Fonte" style="width: 100%;">
+          </div> -->
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section id="info" class="bg-first">
+    <div class="container text-center">
+      <h2 class="title">Informazioni e Contatti</h2>
+      <div class="row">
+        <div class="col-lg text-center">
+          <h2 class="subtitle text-center">Parcheggio</h2>
+          <p>La Chiesa si trova in cima a una salita lungo la quale è possibile parcheggiare.<br>Consigliamo comunque agli autisti di lasciare i passeggeri davanti alla Chiesa per poi riscendere per posteggiare, vista la ripidità della salita.</p>
+        </div>
+        <div class="col-lg text-center">
+          <h2 class="subtitle text-center">Alberghi</h2>
+          <p>Vi suggeriamo di soggiornare tra Loreto, Portonovo e Ancona.
+            <ol>
+              <li><a class="dark-link" href="#">La Fonte - Seebay Hotel</a>, Portonovo    </li>
+              <li><a class="dark-link" href="#">Hotel Emilia</a>, Portonovo               </li>
+              <li><a class="dark-link" href="#">NH Hotel</a>, Ancona                      </li>
+              <li><a class="dark-link" href="#">Casa San Francesco</a>, Loreto            </li>
+              <li><strong>Arrangiatevi</strong>         </li>
+            </ol>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg text-center">
+        <p class="subtitle">Regalo</p>
+        <p>
+        Se desideri farci un regalo, puoi contribuire a costruire la nostra vita insieme, aiutandoci ad organizzare il viaggio di nozze o ad arredare la nostra futura casa, con un bonifico:
+        <br><strong>Intestatario:</strong> Benedetta Rossi
+        <br><strong>Causale:</strong> regalo di nozze Giorgio e Benni - LaTuaFirma
+        <br><strong>IBAN:</strong> <a class="dark-link copy-link">IT61M0538737381000042042522</a>
+        </p>
+          <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'"><i class="fa fa-gift"></i> Lista Nozze</button>
+        </div>
+        <div class="col-lg text-center">
+        <p class="subtitle">Conferma</p>
+        <p> Facci sapere se parteciperai!</p>
+          <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'"><i class="fa fa-envelope"></i> RSVP</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg text-center">
+          <p class="subtitle">Contatti</p>
+          <p><i class="fas fa-envelope"></i> <a class="dark-link copy-link">giorgioebenedetta@gmail.com</a></p>
+          <div class="row">
+            <div class="col-lg text-center">
+              <p class="lead">BENEDETTA ROSSI</p>
+              <p class="lead"><i class="fas fa-phone-alt"></i> <a class="dark-link copy-link">+39 366 3831102</a></p>
+            </div>
+            <div class="col-lg text-center">
+              <p class="lead">GIORGIO NEGRINI</p>
+              <p class="lead"><i class="fas fa-phone-alt"></i> <a class="dark-link copy-link">+39 328 7266610</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="bg-dark" id="sposify">
+    <div class="container-fluid text-center spouses-section">
+      <h2 class=title><i class="fab fa-spotify"></i> <strong>Sposify</strong></h2>
+      <p class="lead">Ascolta le playlist create dagli sposi!</p>
+      <div class="row">
+        <div class="col text-center" style="padding: 10px; padding-right: 10px">
+          <iframe src="https://open.spotify.com/embed/playlist/2lJmW373coJGebPG6xn613" frameborder="0" allowtransparency="true" width="100%" height="350px" allow="encrypted-media"></iframe>
+        </div>
+        <div class="col text-center" style="padding: 10px; padding-right: 10px">
+          <iframe src="https://open.spotify.com/embed/playlist/2QT2Pt0olYcVMYEu1rb33B" frameborder="0" allowtransparency="true" width="100%" height="350px" allow="encrypted-media"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="photogallery" class="bg-second">
+    <div class="container text-center">
+      <h2 class="title">Photo Gallery</h2>
+      <p>Alfio e Benni <strong>since 2014</strong></p>
+    </div>
+    <div id="freewall" class="free-wall"></div>
+  </section>
+
+
+
+
+
+
+{% endblock %}
+
+
+<!-- Additional js for this page -->
+{% block additional_js %}
+  <!-- adjust header-->
+  <script type="text/javascript">
+    if ( screen.availWidth > 1200 ) {
+      window.scrollTo(0, 70);
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.body-btn, .head-btn').bind('touchstart touchend', function(e) {
+        e.preventDefault();
+        $(this).toggleClass('hover');
+      });
+    });
+  </script>
+  
+  <!-- Custom JavaScript for countdown -->
+  <!-- <script src="/static/js/countdown.js"></script> -->
+
+  <!-- Semi-Custom JavaScript for photogallery Free-wall + GG-grid Layout -->
+  <script src="/static/js/freewall.js"></script>
+  <script src="/static/js/photogallery.js"></script>
+{% endblock %}
