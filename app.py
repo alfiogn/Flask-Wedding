@@ -12,8 +12,8 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_TLS= False,
     MAIL_USE_SSL=True,
-    MAIL_USERNAME="benedettaegiorgio@gmail.com", #os.environ['MAIL_USERNAME'],
-    MAIL_PASSWORD="Benni*Alfio!231021", #os.environ['MAIL_PASSWORD'],
+    MAIL_USERNAME=os.environ['MAIL_USERNAME'],
+    MAIL_PASSWORD=os.environ['MAIL_PASSWORD'],
 )
 
 mail = Mail(app)
@@ -50,7 +50,7 @@ def rsvp_email():
 
         mail.send(msg1)
 
-        msg2 = Message(subject="Matrimonio Benedetta&Giorgio",
+        msg2 = Message(subject="Matrimonio Giorgio e Benni",
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=[email],
                       body="Grazie per la tua conferma!\n\nCi vediamo al matrimonio!" +\
