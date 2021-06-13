@@ -45,7 +45,7 @@ def rsvp_email():
     with app.app_context():
         msg1 = Message(subject="Nuovo RSVP ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
-                      recipients=["benedettaegiorgio@gmail.com"],
+                      recipients=app.config.get("MAIL_USERNAME"),
                       body="Nome e cognome: {}\nE-mail: {}\nNumero adulti: {}\nNumero bambini: {}\nNumero neonati: {}\nEventuali note: {}".format(name, email, adults, kids, babies, notes))
 
         mail.send(msg1)
@@ -63,11 +63,11 @@ def rsvp_email():
 @app.route('/send_message', methods = ['GET', 'POST'])
 def send_message():
     text = request.form['text']
-
+    print(app.config.get("MAIL_USERNAME"))
     with app.app_context():
         msg1 = Message(subject="Nuovo regalo ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
-                      recipients=["benedettaegiorgio@gmail.com"],
+                      recipients=app.config.get("MAIL_USERNAME"),
                       body=text)
 
         mail.send(msg1)
