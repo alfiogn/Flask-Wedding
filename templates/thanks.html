@@ -14,7 +14,7 @@
             <a class="nav-link js-scroll-trigger" aria-current="page" href="{{ url_for('home') }}">Torna alla home</a>
           </li>
           <li class="nav-item">
-          <button class="btn head-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'"><i class="fa fa-gift"></i> Lista Nozze</button>
+          <button class="btn head-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'" ontouchstart="$(this).trigger('click')"><i class="fa fa-gift"></i> Lista Nozze</button>
           <li>
         </ul>
       </div>
@@ -31,7 +31,7 @@
       <h2 class="title"> </h2>
       <h2 class="title"> </h2>
       <p class="lead">Ora se vuoi puoi farci un regalo!</p>
-      <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'"><i class="fas fa-gift"></i> Lista Nozze</button>
+      <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'" ontouchstart="$(this).trigger('click')"><i class="fas fa-gift"></i> Lista Nozze</button>
     </div>
     </section>
 {% endblock %}

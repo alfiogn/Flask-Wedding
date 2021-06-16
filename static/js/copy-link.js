@@ -3,6 +3,7 @@ var copyLinks = document.querySelectorAll('.copy-link')
 //Loop through all elements and attaching event listener
 copyLinks.forEach(el => {
   el.addEventListener('click', copyText)
+  el.addEventListener('touchstart', copyText)
 })
 
 // function for selecting the text of an element based on the event.target (supporting IE)

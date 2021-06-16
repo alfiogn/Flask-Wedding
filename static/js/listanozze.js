@@ -35,16 +35,16 @@ var elements = `
          <br><strong>Causale:</strong><br> regalo di nozze Giorgio e Benni - LaTuaFirma
          <br><strong>IBAN:</strong> <br><a class="dark-link copy-link">IT61M0538737381000042042522</a></p>
       </div>
-      <p>Fatto?</p>
+      <a class="dark-link" target="_blank" href="#">Fatto?</a>
       <form id="send-giftmsg"><div class="form-group">
         <textarea class="form-control" id="Message" placeholder="Lasciaci un messaggio. Non dimenticare nome del regalo e firma." rows="3"></textarea>
       </div></form>
       <div class="position-relative">
-        <button class='btn body-btn msg-btn' onclick="sendGiftMessage()">Invia il messaggio! <i class="fas fa-paper-plane"></i></button>
+        <button class='btn body-btn msg-btn' onclick="sendGiftMessage()" ontouchstart="$(this).trigger('click')">Invia il messaggio! <i class="fas fa-paper-plane"></i></button>
       </div>
     </div>
   </div>
-  <button class='btn body-btn gift-btn'><i class="fa fa-gift" aria-hidden="true"></i> Regala!</button>
+  <button class='btn body-btn gift-btn' ontouchstart="$(this).trigger('click')"><i class="fa fa-gift" aria-hidden="true"></i> Regala!</button>
 </div>
 `;
 

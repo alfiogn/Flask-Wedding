@@ -21,7 +21,7 @@
         <a class="nav-link js-scroll-trigger" aria-current="page" href="{{ url_for('home') }}">Torna alla home</a>
       </li>
       <li class="nav-item">
-      <button class="btn head-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'"><i class="fa fa-envelope"></i> RSVP</button>
+      <button class="btn head-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'" ontouchstart="$(this).trigger('click')"><i class="fa fa-envelope"></i> RSVP</button>
       <li>
     </ul>
   </div>
@@ -46,7 +46,7 @@
       <h2 class="title"> </h2>
       <h2 class="title"> </h2>
       <p class="lead">Se non l'hai già fatto, facci sapere se parteciperai!</p>
-      <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'"><i class="fas fa-envelope"></i> RSVP</button>
+      <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'" ontouchstart="$(this).trigger('click')"><i class="fas fa-envelope"></i> RSVP</button>
     </div>
   </section>
 {% endblock %}

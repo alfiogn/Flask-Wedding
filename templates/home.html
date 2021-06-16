@@ -37,10 +37,10 @@
         <a class="nav-link js-scroll-trigger" href="#photogallery">Photo gallery</a>
       </li>
       <li class="nav-item">
-      <button class="btn head-btn" onclick="document.location='{{ url_for('listanozze') }}'"><i class="fa fa-gift"></i> Lista Nozze</button>
+      <button class="btn head-btn" onclick="document.location='{{ url_for('listanozze') }}'" ontouchstart="$(this).trigger('click')"><i class="fa fa-gift"></i> Lista Nozze</button>
       </li>
       <li class="nav-item">
-      <button class="btn head-btn" onclick="document.location='{{ url_for('rsvp') }}'"><i class="fa fa-envelope"></i> RSVP</button>
+      <button class="btn head-btn" onclick="document.location='{{ url_for('rsvp') }}'" ontouchstart="$(this).trigger('click')"><i class="fa fa-envelope"></i> RSVP</button>
       </li>
     </ul>
   </div>
@@ -119,8 +119,8 @@
             <p class="lead">Cattedrale di San Ciriaco</p>
             <p class="lead">Sabato 23 ottobre 2021, Ore 11:30</p>
             <p class="lead">Piazzale del Duomo, 9, Ancona (AN)</p>
-            <a class="btn body-btn" target="_blank" href="https://goo.gl/maps/A6jjquKbkrCZzsDH6"><i class="fas fa-map-marked-alt"></i> Vedi sulla mappa</a>
-            <a class="btn body-btn js-scroll-trigger" href="#info"><i class="fas fa-info"></i> Info parcheggio</a>
+            <a class="btn body-btn" target="_blank" href="https://goo.gl/maps/A6jjquKbkrCZzsDH6" ontouchstart="$(this).trigger('click')"><i class="fas fa-map-marked-alt"></i> Vedi sulla mappa</a>
+            <a class="btn body-btn js-scroll-trigger" href="#info" ontouchstart="$(this).trigger('click')"><i class="fas fa-info"></i> Info parcheggio</a>
           </div>
         </div>
         <div class="col-lg text-left" style="padding: 0px">
@@ -143,8 +143,8 @@
             <h2 class="title">Ricevimento</h2>
             <p class="lead">La Fonte - Seebay Hotel</p>
             <p class="lead">Via Poggio, 160, Portonovo (AN)</p>
-            <a class="btn body-btn" target="_blank" href="https://goo.gl/maps/nXFSDZnox6WkmL5P9"><i class="fas fa-map-marked-alt"></i> Vedi sulla mappa</a>
-            <a class="btn body-btn js-scroll-trigger" href="#info"><i class="fas fa-info"></i> Info alberghi</a>
+            <a class="btn body-btn" target="_blank" href="https://goo.gl/maps/nXFSDZnox6WkmL5P9" ontouchstart="$(this).trigger('click')"><i class="fas fa-map-marked-alt"></i> Vedi sulla mappa</a>
+            <a class="btn body-btn js-scroll-trigger" href="#info" ontouchstart="$(this).trigger('click')"><i class="fas fa-info"></i> Info alberghi</a>
           </div>
         </div>
         <div class="col-lg order-2 order-lg-1 text-right" style="padding: 0px">
@@ -171,10 +171,10 @@
           <h2 class="subtitle text-center">Alberghi</h2>
           <p>Vi suggeriamo di soggiornare tra Loreto, Portonovo e Ancona.
             <ol>
-              <li><a class="dark-link" href="#">La Fonte - Seebay Hotel</a>, Portonovo    </li>
-              <li><a class="dark-link" href="#">Hotel Emilia</a>, Portonovo               </li>
-              <li><a class="dark-link" href="#">NH Hotel</a>, Ancona                      </li>
-              <li><a class="dark-link" href="#">Casa San Francesco</a>, Loreto            </li>
+              <li><a class="dark-link" target="_blank" href="https://www.seebayhotel.com/">La Fonte - Seebay Hotel</a>, Portonovo    </li>
+              <li><a class="dark-link" target="_blank" href="https://www.hotelemilia.com/it/">Hotel Emilia</a>, Portonovo               </li>
+              <li><a class="dark-link" target="_blank" href="https://www.nh-hotels.com/hotel/nh-ancona">NH Hotel</a>, Ancona                      </li>
+              <li><a class="dark-link" target="_blank" href="https://www.loretosanfrancescohotel.it/">Casa San Francesco</a>, Loreto            </li>
               <li><strong>Arrangiatevi</strong>         </li>
             </ol>
           </p>
@@ -189,12 +189,12 @@
         <br><strong>Causale:</strong> regalo di nozze Giorgio e Benni - LaTuaFirma
         <br><strong>IBAN:</strong> <a class="dark-link copy-link">IT61M0538737381000042042522</a>
         </p>
-          <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'"><i class="fa fa-gift"></i> Lista Nozze</button>
+          <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'" ontouchstart="$(this).trigger('click')"><i class="fa fa-gift"></i> Lista Nozze</button>
         </div>
         <div class="col-lg text-center">
         <p class="subtitle">Conferma</p>
         <p> Facci sapere se parteciperai!</p>
-          <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'"><i class="fa fa-envelope"></i> RSVP</button>
+          <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('rsvp') }}'" ontouchstart="$(this).trigger('click')"><i class="fa fa-envelope"></i> RSVP</button>
         </div>
       </div>
       <div class="row">
