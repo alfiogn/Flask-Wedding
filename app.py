@@ -1,4 +1,4 @@
-import os
+import os, pdb
 from flask import Flask, render_template, url_for, jsonify, flash, get_flashed_messages, redirect, request
 from flask_mail import Mail, Message
 from flask_caching import Cache
@@ -45,7 +45,7 @@ def rsvp_email():
     with app.app_context():
         msg1 = Message(subject="Nuovo RSVP ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
-                      recipients=app.config.get("MAIL_USERNAME"),
+                      recipients=app.config.get("MAIL_USERNAME").split(),
                       body="Nome e cognome: {}\nE-mail: {}\nNumero adulti: {}\nNumero bambini: {}\nNumero neonati: {}\nEventuali note: {}".format(name, email, adults, kids, babies, notes))
 
         mail.send(msg1)
@@ -63,11 +63,10 @@ def rsvp_email():
 @app.route('/send_message', methods = ['GET', 'POST'])
 def send_message():
     text = request.form['text']
-    print(app.config.get("MAIL_USERNAME"))
     with app.app_context():
         msg1 = Message(subject="Nuovo regalo ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
-                      recipients=app.config.get("MAIL_USERNAME"),
+                      recipients=app.config.get("MAIL_USERNAME").split(),
                       body=text)
 
         mail.send(msg1)
@@ -93,8 +92,6 @@ def makePhotoGallery():
     res = pd.DataFrame(data={"File" : imglist,
                              "W"    : width,
                              "H"    : height})
-    # res = pd.read_csv(basedir+"/static/images/photogallery/photogallery.csv",
-            # header=1, names=["File", "W", "H"])
     return jsonify(res.to_json(orient='records'))
 
 
