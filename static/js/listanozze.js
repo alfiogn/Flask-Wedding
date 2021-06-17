@@ -35,7 +35,8 @@ var elements = `
          <br><strong>Causale:</strong><br> regalo di nozze Giorgio e Benni - LaTuaFirma
          <br><strong>IBAN:</strong> <br><a class="dark-link copy-link">IT61M0538737381000042042522</a></p>
       </div>
-      <a class="dark-link" target="_blank" href="#">Fatto?</a>
+      <!-- <a class="dark-link" target="_blank" href="#">Fatto?</a> -->
+      <p>Fatto?</p>
       <form id="send-giftmsg"><div class="form-group">
         <textarea class="form-control" id="Message" placeholder="Lasciaci un messaggio. Non dimenticare nome del regalo e firma." rows="3"></textarea>
       </div></form>
