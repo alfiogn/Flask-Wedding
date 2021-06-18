@@ -20,7 +20,7 @@
 })()
 
 
-$('#submitRSVP').on('click', function (event){
+$('#submitRSVP').on('click touchstart', function (event){
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
   var form = document.querySelectorAll('#formRSVP')[0]; //.needs-validation')
 
