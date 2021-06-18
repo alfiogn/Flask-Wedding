@@ -1,4 +1,4 @@
-import os, pdb
+import os
 from flask import Flask, render_template, url_for, jsonify, flash, get_flashed_messages, redirect, request
 from flask_mail import Mail, Message
 from flask_caching import Cache
@@ -9,9 +9,9 @@ app = Flask(__name__, template_folder='templates', static_folder='static')
 
 app.config.update(
     MAIL_SERVER='smtp.gmail.com',
-    MAIL_PORT=587,
+    MAIL_PORT=465,
     MAIL_USE_TLS=True,
-    MAIL_USE_SSL=False,
+    MAIL_USE_SSL=True,
     MAIL_USERNAME=os.environ['MAIL_USERNAME'],
     MAIL_PASSWORD=os.environ['MAIL_PASSWORD'],
 )
