@@ -8,10 +8,11 @@ from PIL import Image
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 app.config.update(
+    DEBUG=True,
     MAIL_SERVER='smtp.gmail.com',
     MAIL_PORT=465,
-    MAIL_USE_TLS=True,
-    MAIL_USE_SSL=True,
+    MAIL_USE_TLS=False, #True,
+    MAIL_USE_SSL=True, #False,
     MAIL_USERNAME=os.environ['MAIL_USERNAME'],
     MAIL_PASSWORD=os.environ['MAIL_PASSWORD'],
 )
