@@ -1,7 +1,6 @@
 import os
 from flask import Flask, render_template, url_for, jsonify, flash, get_flashed_messages, redirect, request
 from flask_mail import Mail, Message
-from flask_caching import Cache
 import pandas as pd
 from PIL import Image
 
