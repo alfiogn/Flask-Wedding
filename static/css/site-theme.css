@@ -271,6 +271,9 @@ label {
 .validated .form-control:valid {
   border-color: var(--bar-color);
 }
+.form-control.is-valid, .was-validated .form-control:valid {
+  border-color: var(--bar-color);
+}
 
 /* Buttons */
 /*:active*/
