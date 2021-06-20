@@ -31,52 +31,67 @@
 {% block page_body %}
   <section>
   <div class="container">
+  <p class="title">R.S.V.P.</p>
+  <small id="emailHelp" class="form-text text-muted">Vista la situazione di emergenza nella quale ci troviamo, dobbiamo chiederti molte informazioni, necessarie per l'organizzazione dell'evento.<br>Ti chiediamo di compilare con attenzione e dichiariamo che condivideremo i tuoi dati solamente con il COVID manager. </small>
 
   <form class="needs-validation" id="formRSVP" novalidate>
+
+  <div class="form-group">
   
   <!--nome e cognome-->
-    <div class="form-group">
-    <label for="Name">Nome e Cognome</i> </label>
-    <input type="text" class="form-control" id="Name" placeholder="oppure soprannome univocamente determinato" required>
-    <small class="form-text text-muted"></small>
-    <div class="valid-feedback">Ok!</div>
-    <div class="invalid-feedback">Per favore inserisci un nome.</div>
+  <label for="Name">Nome e Cognome</i> </label>
+  <input type="text" class="form-control" id="Name" placeholder="oppure soprannome univocamente determinato" required>
+  <small class="form-text text-muted"></small>
+  <div class="invalid-feedback">Per favore inserisci un nome.</div>
 
-    <!--indirizzo email-->
-    <label for="Email">Indirizzo e-mail</label>
-    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="nome.cognome@mail.com">
-    <small id="emailHelp" class="form-text text-muted">Non condivideremo il tuo indirizzo e-mail con terze parti.</small>
-    <div class="invalid-feedback">Per favore inserisci un indirizzo e-mail.</div>
+  <!--indirizzo email-->
+  <label for="Email">Indirizzo e-mail</label>
+  <input type="email" class="form-control" id="Email" aria-describedby="emailHelp" placeholder="nome.cognome@mail.com" required>
+  <div class="invalid-feedback">Per favore inserisci un indirizzo e-mail.</div>
 
-    <!-- ospiti -->
-    <div class="row">
-    <div class="col-lg">
-    <label for="Adults">Numero adulti</label>
-    <input class="form-control" id="Adults" type="number" min="1" max="10" data-bv-integer-message="Per favore inserisci un numero intero.">
-    </div>
-    <div class="col-lg">
-    <label for="Kids">Numero bambini (4-10 anni)</label>
-    <input class="form-control" id="Kids" type="number" min="0" max="10" data-bv-integer-message="Per favore inserisci un numero intero.">
-    </div>
-    <div class="col-lg">
-    <label for="Babies">Numero bambini (0-3 anni)</label>
-    <input class="form-control" id="Babies" type="number" min="0" max="10" data-bv-integer-message="Per favore inserisci un numero intero.">
-    </div>
-    </div>
+  <!--numero di telefono-->
+  <label for="Phone">Numero di telefono</label>
+  <input type="text" class="form-control" id="Phone" aria-describedby="phoneHelp" placeholder="+39 333 123 4567" required>
+  <small id="phoneHelp" class="form-text text-muted"></small>
+  <div class="invalid-feedback">Per favore inserisci un numero di telefono.</div>
 
-    <!-- Eventuali note -->
-    <div class="mb-3">
-    <label for="Notes" class="form-label">Note</label>
-    <textarea class="form-control" id="Notes" placeholder="Segnala eventuali allergie, intolleranze o preferenze alternative al menù di pesce." rows="3"></textarea>
-    </div>
-    </div>
+  <!--indirizzo-->
+  <label for="Indirizzo">Indirizzo</label>
+  <input type="text" class="form-control" id="Address" aria-describedby="addressHelp" placeholder="Via, Numero, CAP, Citt&agrave;, Provincia" required>
+  <small id="addressHelp" class="form-text text-muted"></small>
+  <div class="invalid-feedback">Per favore inserisci un indirizzo.</div>
+
+  <!-- ospiti -->
+  <div class="row">
+  <div class="col-lg">
+  <label for="Adults">Numero adulti</label>
+  <input class="form-control" id="Adults" type="number" min="1" max="10" data-bv-integer-message="Per favore inserisci un numero intero." required>
+  </div>
+  <div class="col-lg">
+  <label for="Kids">Numero bambini (4-10 anni)</label>
+  <input class="form-control" id="Kids" type="number" min="0" max="10" data-bv-integer-message="Per favore inserisci un numero intero.">
+  </div>
+  <div class="col-lg">
+  <label for="Babies">Numero bambini (0-3 anni)</label>
+  <input class="form-control" id="Babies" type="number" min="0" max="10" data-bv-integer-message="Per favore inserisci un numero intero.">
+  </div>
+  </div>
+
+  <!-- Eventuali note -->
+  <div class="mb-3">
+  <label for="Notes" class="form-label">Note</label>
+  <textarea class="form-control" id="Notes" placeholder="Segnala eventuali allergie, intolleranze o preferenze alternative al menù di pesce." rows="3"></textarea>
+  </div>
+
+  <!-- close form group -->
+  </div>
 
 
-    <!-- gradimento -->
+  <!-- gradimento -->
 
-    <!-- onclick="document.location='{{ url_for('thanks') }}'" -->
-    <!-- ontouchstart="$(this).trigger('click')" -->
-    <button id="submitRSVP" type="submit" class="btn body-btn" onclick="sendRsvp()" ontouchstart="$(this).trigger('click')">Inviaci la risposta <i class="fas fa-paper-plane"></i></button>
+  <!-- onclick="document.location='{{ url_for('thanks') }}'" -->
+  <!-- ontouchstart="$(this).trigger('click')" -->
+  <button id="submitRSVP" type="submit" class="btn body-btn" onclick="sendRsvp()" ontouchstart="$(this).trigger('click')">Inviaci la risposta <i class="fas fa-paper-plane"></i></button>
   <!---->
   </form>
   </div>

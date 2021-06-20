@@ -37,16 +37,19 @@ def rsvp():
 def rsvp_email():
     name = request.form['name']
     email = request.form['email']
+    phone = request.form['phone']
+    address = request.form['address']
     adults = request.form['adults']
     kids = request.form['kids']
     babies = request.form['babies']
     notes = request.form['notes']
 
+    infotext = "Nome e cognome: {}\nE-mail: {}\nTelefono: {}\nIndirizzo: {}\nNumero adulti: {}\nNumero bambini: {}\nNumero neonati: {}\nEventuali note: {}".format(name, email, phone, address, adults, kids, babies, notes)
     with app.app_context():
         msg1 = Message(subject="Nuovo RSVP ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=app.config.get("MAIL_USERNAME").split(),
-                      body="Nome e cognome: {}\nE-mail: {}\nNumero adulti: {}\nNumero bambini: {}\nNumero neonati: {}\nEventuali note: {}".format(name, email, adults, kids, babies, notes))
+                      body=infotext)
 
         mail.send(msg1)
 
@@ -54,7 +57,7 @@ def rsvp_email():
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=[email],
                       body="Grazie per la tua conferma!\n\nCi vediamo al matrimonio!" +\
-                              "\n\n<---- LE TUE RISPOSTE ---->\nNome e cognome: {}\nE-mail: {}\nNumero adulti: {}\nNumero bambini: {}\nNumero neonati: {}\nEventuali note: {}".format(name, email, adults, kids, babies, notes))
+                              "\n\n<---- LE TUE RISPOSTE ---->\n"+infotext)
 
         mail.send(msg2)
     return 'OK'

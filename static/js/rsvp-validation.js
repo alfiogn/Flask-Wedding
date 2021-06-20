@@ -48,6 +48,8 @@ function sendRsvp() {
     event.preventDefault();
     var name = $('#Name').val();
     var email = $('#Email').val();
+    var phone = $('#Phone').val();
+    var address = $('#Address').val();
     var adults = $('#Adults').val();
     var kids = $('#Kids').val();
     var babies = $('#Babies').val();
@@ -56,7 +58,8 @@ function sendRsvp() {
     $.ajax({
         type: "POST",
         url: "/rsvp_email",
-        data: {name:name, email:email, adults:adults,
+        data: {name:name, email:email, phone:phone,
+          address:address, adults:adults,
           kids:kids, babies:babies, notes:notes},
         success: function(res){
             console.log(res);
