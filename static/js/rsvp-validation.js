@@ -63,7 +63,7 @@ function sendRsvp() {
           kids:kids, babies:babies, notes:notes},
         success: function(res){
             console.log(res);
-            window.location = '/thanks';
+            window.location.href = '/thanks';
         },
         error: function(xhr, status, error) {
           var err = "(" + xhr.responseText + ")";
