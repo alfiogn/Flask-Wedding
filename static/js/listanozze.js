@@ -150,7 +150,9 @@ function sendGiftMessage() {
     url: "/send_message",
     data: {text:textbox.value},
     success: function(res){
+      try{
         console.log(res);
+      }catch (err) {alert(err);}
     },
     error: function(xhr, status, error) {
       var err = "(" + xhr.responseText + ")";
