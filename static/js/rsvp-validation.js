@@ -62,8 +62,10 @@ function sendRsvp() {
           address:address, adults:adults,
           kids:kids, babies:babies, notes:notes},
         success: function(res){
+          try{
             console.log(res);
             window.location.href = '/thanks';
+          }catch (err) {alert(err);}
         },
         error: function(xhr, status, error) {
           var err = "(" + xhr.responseText + ")";
