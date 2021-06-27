@@ -6,15 +6,18 @@ $(function(){
     dataType: 'json',
     success: function(response){
       var lista = JSON.parse(response);
-      $(lista).each(function(){
-        addGift(this);
-      });
+      for (let i = 0; i < lista.length; i++) {
+        addGift(lista[i]);
+      }
+      //$(lista).each(function(){
+        //addGift(this);
+      //});
     },
     error: function(error){
       console.log(error);
     },
     complete: function() {
-      makeGiftWindow();
+      //makeGiftWindow();
       createWall();
     }
   })
@@ -22,7 +25,7 @@ $(function(){
 
 var elements = `
 <div class='gift-cell' style='width:{width}px; height: {height}px; background-image: url(/static/images/listanozze/{imgfilename})'>
-  <div class='gift-window'>
+  <div class='gift-window' id='gift-window-{index}'>
     <div class='container-fluid gift-content'>
       <span class='gift-close'>&times;</span>
       <p class='gift-text'><strong>{Nome oggetto}</strong></p>
@@ -45,7 +48,7 @@ var elements = `
       </div>
     </div>
   </div>
-  <button class='btn body-btn gift-btn' ontouchstart="$(this).trigger('click')"><i class="fa fa-gift" aria-hidden="true"></i> Regala!</button>
+  <button class='btn body-btn gift-btn' onclick="openGiftWindow({index})" ontouchstart="$(this).trigger('click')"><i class="fa fa-gift" aria-hidden="true"></i> Regala!</button>
 </div>
 `;
 
@@ -58,15 +61,16 @@ function addGift(regalo) {
   var giftname  = regalo["Nome"];
   var giftdescr = regalo["Descrizione"];
   var giftcost  = regalo["Costo"];
-  counter += 1;
   htmlcode = elements.replace(/\{height\}/g, h).replace(/\{windoheight\}/g, h*hfactor).replace(/\{width\}/g, w)
                      .replace(/\{windowidth\}/g, w*wfactor).replaceAll("{imgfilename}", imgname)
                      .replaceAll("{Nome oggetto}", giftname).replaceAll("{Descrizione}", giftdescr)
                      .replaceAll("{Costo}", giftcost).replaceAll("{index}", counter);
   $("#freewall").append(htmlcode);
+  counter += 1;
 };
 
 
+/*
 function makeGiftWindow() {
   var listgifts = document.querySelectorAll(".gift-cell");
   var modalName = "gift-window";
@@ -80,7 +84,8 @@ function makeGiftWindow() {
     var n = (i+1).toString();
     
     // Get the modal
-    var modal = document.getElementsByClassName(modalName)[i]; //.concat(n));
+    console.log(modalName.concat(n));
+    var modal = document.getElementsById(modalName.concat(n));
 
     // Get the button that opens the modal
     var btn = document.getElementsByClassName(btnName)[i];//.concat(n));
@@ -114,6 +119,54 @@ function makeGiftWindow() {
       }
     }
   }
+};
+*/
+function openGiftWindow(i) {
+  var listgifts = document.querySelectorAll(".gift-cell");
+  var modalName = "gift-window";
+  var btnName = "gift-btn";
+  var closeName = "gift-close";
+  var innerbtnName = "msg-btn";
+
+  limitItem = listgifts.length;
+  console.log("number of gifts", limitItem);
+    var n = (i+1).toString();
+    
+    // Get the modal
+    console.log(modalName.concat(n));
+    var modal = document.getElementsByClassName(modalName)[i];
+
+    // Get the button that opens the modal
+    var btn = document.getElementsByClassName(btnName)[i];//.concat(n));
+    var innerbtn = document.getElementsByClassName(innerbtnName)[i];//.concat(n));
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName(closeName)[i];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+      if (event.target == innerbtn) {
+        modal.style.display = "none";
+        // smoothly scroll
+        var el = document.getElementById("thanks");
+        $('html, body').animate({
+          scrollTop: (el.offsetTop - 98)
+        }, 1000, "easeInOutExpo");
+      }
+    }
 };
 
 function createWall() {

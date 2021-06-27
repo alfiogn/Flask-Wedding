@@ -87,8 +87,11 @@ def makePhotoGallery():
     basedir = os.path.dirname(os.path.abspath(__file__))
     path = "/static/images/photogallery/"
     imglist = os.listdir(basedir + path)
+    imglist.sort()
+    print(imglist)
     width, height = [], []
     for img in imglist:
+        print("Opening image ", img)
         w, h = Image.open(basedir + path + img).size
         width.append(w)
         height.append(h)
@@ -102,7 +105,8 @@ def makePhotoGallery():
 def makeListaNozze():
     basedir = os.path.dirname(os.path.abspath(__file__))
     res = pd.read_csv(basedir+"/static/images/listanozze/listanozze.csv",
-            header=1, names=["File", "Nome", "Descrizione", "Costo"])
+            sep=",", comment="#", header=0, names=["File", "Nome", "Descrizione", "Costo"])
+    print(res)
     return jsonify(res.to_json(orient='records'))
 
 

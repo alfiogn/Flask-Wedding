@@ -120,7 +120,7 @@
             <p class="lead">Sabato 23 ottobre 2021, Ore 11:30</p>
             <p class="lead">Piazzale del Duomo, 9, Ancona (AN)</p>
             <a class="btn body-btn" target="_blank" href="https://goo.gl/maps/A6jjquKbkrCZzsDH6" ontouchstart="$(this).trigger('click')"><i class="fas fa-map-marked-alt"></i> Vedi sulla mappa</a>
-            <a class="btn body-btn js-scroll-trigger" href="#info" ontouchstart="$(this).trigger('click')"><i class="fas fa-info"></i> Info parcheggio</a>
+            <a class="btn body-btn js-scroll-trigger" href="#parcheggio" ontouchstart="$(this).trigger('click')"><i class="fas fa-info"></i> Info parcheggio</a>
           </div>
         </div>
         <div class="col-lg text-left" style="padding: 0px">
@@ -144,7 +144,7 @@
             <p class="lead">La Fonte - Seebay Hotel</p>
             <p class="lead">Via Poggio, 160, Portonovo (AN)</p>
             <a class="btn body-btn" target="_blank" href="https://goo.gl/maps/nXFSDZnox6WkmL5P9" ontouchstart="$(this).trigger('click')"><i class="fas fa-map-marked-alt"></i> Vedi sulla mappa</a>
-            <a class="btn body-btn js-scroll-trigger" href="#info" ontouchstart="$(this).trigger('click')"><i class="fas fa-info"></i> Info alberghi</a>
+            <a class="btn body-btn js-scroll-trigger" href="#alberghi" ontouchstart="$(this).trigger('click')"><i class="fas fa-info"></i> Info alberghi</a>
           </div>
         </div>
         <div class="col-lg order-2 order-lg-1 text-right" style="padding: 0px">
@@ -163,18 +163,23 @@
     <div class="container text-center">
       <h2 class="title">Informazioni e Contatti</h2>
       <div class="row">
-        <div class="col-lg text-center">
+        <div class="col-lg text-center" id="parcheggio">
           <h2 class="subtitle text-center">Parcheggio</h2>
           <p>La Chiesa si trova in cima a una salita lungo la quale &egrave; possibile parcheggiare.<br>Consigliamo comunque agli autisti di lasciare i passeggeri davanti alla Chiesa per poi riscendere per posteggiare, vista la ripidità della salita.<br>Si possono trovare altri parcheggi in Piazza del Senato.</p>
         </div>
-        <div class="col-lg text-center">
+        <div class="col-lg text-center" id="alberghi">
           <h2 class="subtitle text-center">Alberghi</h2>
           <p>Vi suggeriamo di soggiornare tra Loreto, Portonovo e Ancona.
             <ol class="text-left">
-              <li><a class="dark-link" target="_blank" href="https://www.seebayhotel.com/">La Fonte - Seebay Hotel</a>, Portonovo    </li>
-              <li><a class="dark-link" target="_blank" href="https://www.hotelemilia.com/it/">Hotel Emilia</a>, Portonovo               </li>
-              <li><a class="dark-link" target="_blank" href="https://www.nh-hotels.com/hotel/nh-ancona">NH Hotel</a>, Ancona                      </li>
-              <li><a class="dark-link" target="_blank" href="https://www.loretosanfrancescohotel.it/">Casa San Francesco</a>, Loreto            </li>
+              <li><a class="dark-link font-weight-bold" target="_blank" href="https://www.seebayhotel.com/">La Fonte - Seebay Hotel</a>, Portonovo:
+                c'&egrave; la possibilit&agrave; di usufruire di una tariffa agevolata nella location del ricevimento. Contattateci per ulteriori informazioni.</li>
+              <li><a class="dark-link font-weight-bold" target="_blank" href="https://www.hotelemilia.com/it/">Hotel Emilia</a>, Portonovo. </li>
+              <li><a class="dark-link font-weight-bold" target="_blank" href="https://www.nh-hotels.com/hotel/nh-ancona">NH Hotel</a>, Ancona.</li>
+              <li><a class="dark-link font-weight-bold" target="_blank" href="https://www.casalepapa.com/">Casale Papa</a>,
+                  <a class="dark-link font-weight-bold" target="_blank" href="https://goo.gl/maps/ZpNy2RZRHWRMk4Jv8">B&amp;B Paradiso</a> e
+                  <a class="dark-link font-weight-bold" target="_blank" href="http://www.anticamaison.net/">Antica Maison Loreto</a>, Loreto:
+                  abbiamo prenotato preventivamente con una tariffa agevolata le 15 camere disponibili. Contattateci per ulteriori informazioni.</li>
+              <!-- <li><a class="dark-link" target="_blank" href=""></a>, Loreto. </li> -->
             </ol>
           </p>
         </div>
@@ -184,9 +189,11 @@
         <p class="subtitle">Regalo</p>
         <p>
         Se desideri farci un regalo, puoi contribuire a costruire la nostra vita insieme, aiutandoci ad organizzare il viaggio di nozze o ad arredare la nostra futura casa, con un bonifico:
-        <br><strong>Intestatario:</strong> Benedetta Rossi
+        <div clasS="text-left">
+        <strong>Intestatario:</strong> Benedetta Rossi
         <br><strong>Causale:</strong> regalo di nozze Giorgio e Benni - LaTuaFirma
         <br><strong>IBAN:</strong> <a class="dark-link copy-link">IT61M0538737381000042042522</a>
+        </div>
         </p>
           <button class="btn body-btn" type="submit" onclick="document.location='{{ url_for('listanozze') }}'" ontouchstart="$(this).trigger('click')"><i class="fa fa-gift"></i> Lista Nozze</button>
         </div>
