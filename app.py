@@ -67,7 +67,11 @@ def rsvp_email():
     address = request.form['address']
     adults = request.form['adults']
     kids = request.form['kids']
+    if not kids:
+        kids = 0
     babies = request.form['babies']
+    if not babies:
+        babies = 0
     notes = request.form['notes']
     info = [name, email, phone, address, adults, kids, babies, notes]
     infostring = "Nome e cognome: {}\n" + \
