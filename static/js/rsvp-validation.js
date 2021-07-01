@@ -19,25 +19,6 @@
     })
 })()
 
-//function checkAndSendRSVP() {
-//  $('#submitRSVP').addEventListener("click", sendRsvp);
-//  if ('ontouchstart' in window) {
-//      menu.addEventListener("touchstart", function() {
-//          var touchHndl = function() {
-//              //call the clickHandler actually
-//              sendRsvp();
-//              //remove the touchend haldler after perform
-//              this.removeEventListener(touchHndl)
-//          }
-//          //attach a handler for touch end when you are in touchstart event
-//          this.addEventListener(touchHndl);
-//      });
-//  }
-//}
-
-
-//$('#submitRSVP').on('click touchstart', function (event){
-//})
 
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 function sendRsvp() {
@@ -55,6 +36,8 @@ function sendRsvp() {
     var kids = $('#Kids').val();
     var babies = $('#Babies').val();
     var notes = $('#Notes').val();
+
+    form.attr("disabled", true);
 
     $.ajax({
         type: "POST",
@@ -78,7 +61,7 @@ function sendRsvp() {
         }
     });
 
-    //window.location = '/thanks';
+    form.removeAttr("disabled");
 
   }
 };
