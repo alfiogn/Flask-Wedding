@@ -89,11 +89,11 @@ def send_message():
                       body=text)
         mail.send(msg1)
 
-        msg2 = Message(subject="Grazie!",
-                      sender=app.config.get("MAIL_USERNAME"),
-                      recipients=[email],
-                      body="Grazie per il tuo regalo!\n\nCi vediamo al matrimonio!")
-        mail.send(msg2)
+        #msg2 = Message(subject="Grazie!",
+        #              sender=app.config.get("MAIL_USERNAME"),
+        #              recipients=[email],
+        #              body="Grazie per il tuo regalo!\n\nCi vediamo al matrimonio!")
+        #mail.send(msg2)
     return 'OK'
 
 
