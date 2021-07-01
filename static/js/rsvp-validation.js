@@ -22,10 +22,7 @@
 
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 function sendRsvp() {
-  console.log("Sending rsvp");
   var form = document.querySelectorAll('#formRSVP')[0]; //.needs-validation')
-  var formbtn = document.getElementById('formRSVP'); //.needs-validation')
-
   if ( form.checkValidity() ) {
 
     event.preventDefault();
@@ -38,7 +35,6 @@ function sendRsvp() {
     var babies = $('#Babies').val();
     var notes = $('#Notes').val();
 
-    formbtn.setAttribute("disabled", "true");
 
     $.ajax({
         type: "POST",
@@ -50,7 +46,10 @@ function sendRsvp() {
           try{
             console.log(res);
             window.location.href = '/thanks';
-          }catch (err) {alert(err);}
+          }
+          catch (err) {
+            alert(err);
+          }
         },
         error: function(xhr, status, error) {
           var err = "(" + xhr.responseText + ")";
@@ -62,9 +61,8 @@ function sendRsvp() {
         }
     });
 
-    form.removeAttribute("disabled");
-
   }
+
 };
 
 
