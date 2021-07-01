@@ -79,21 +79,24 @@ def rsvp_email():
                  "Numero neonati: {}\n" + \
                  "Eventuali note: {}"
 
+    # Database update
     insert_DB_invitati(info)
 
     with app.app_context():
+        print("Sending message to me")
         msg1 = Message(subject="Nuovo RSVP ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=app.config.get("MAIL_USERNAME").split(),
                       body=infostring.format(*info))
         mail.send(msg1)
 
+        print("Sending message to person")
         msg2 = Message(subject="Matrimonio Giorgio e Benni",
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=[email],
                       body="Grazie per la tua conferma!\n\nCi vediamo al matrimonio!\n\n" +
-                           "Giorgio e Benni <3" +
-                           "\n\n<---- LE TUE RISPOSTE ---->\n"+infostring.format(*info))
+                           "Giorgio e Benni <3\n\n" +
+                           "\n\n<------  LE TUE RISPOSTE  ------>\n"+infostring.format(*info))
         mail.send(msg2)
     return 'OK'
 

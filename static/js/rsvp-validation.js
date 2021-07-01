@@ -41,6 +41,7 @@
 
 // Fetch all the forms we want to apply custom Bootstrap validation styles to
 function sendRsvp() {
+  console.log("Sending rsvp");
   var form = document.querySelectorAll('#formRSVP')[0]; //.needs-validation')
 
   if ( form.checkValidity() ) {
