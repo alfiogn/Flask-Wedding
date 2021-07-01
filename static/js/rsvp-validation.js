@@ -24,6 +24,7 @@
 function sendRsvp() {
   console.log("Sending rsvp");
   var form = document.querySelectorAll('#formRSVP')[0]; //.needs-validation')
+  var formbtn = document.getElementById('formRSVP'); //.needs-validation')
 
   if ( form.checkValidity() ) {
 
@@ -37,7 +38,7 @@ function sendRsvp() {
     var babies = $('#Babies').val();
     var notes = $('#Notes').val();
 
-    form.attr("disabled", true);
+    formbtn.setAttribute("disabled", "true");
 
     $.ajax({
         type: "POST",
@@ -61,7 +62,7 @@ function sendRsvp() {
         }
     });
 
-    form.removeAttr("disabled");
+    form.removeAttribute("disabled");
 
   }
 };
