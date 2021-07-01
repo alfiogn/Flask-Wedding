@@ -182,6 +182,9 @@ blockquote.blockquote:after {
 
 
 /*Body stuff*/
+.description {
+  font-size: 1.0rem !important;
+}
 #cerimonia, #ricevimento, #glisposi, #contact, #sposify, #info {
   padding-bottom: 0px !important;
 }
@@ -205,6 +208,9 @@ blockquote.blockquote:after {
   padding-bottom: 150px !important;
 }
 @media (max-width: 991px) {
+  .description {
+    font-size: 0.8rem !important;
+  }
   #cerimonia .event-info, #ricevimento .event-info {
     padding-bottom: 50px !important;
   }
