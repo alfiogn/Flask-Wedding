@@ -72,7 +72,7 @@ def rsvp_email():
     babies = request.form['babies']
     if not babies:
         babies = 0
-    notes = request.form['notes']
+    notes = request.form['notes'].replace("'", "")
     info = [name, email, phone, address, adults, kids, babies, notes]
     infostring = "Nome e cognome: {}\n" + \
                  "E-mail: {}\n" + \
