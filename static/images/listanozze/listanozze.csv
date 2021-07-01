@@ -1,27 +1,27 @@
 File,Nome,Descrizione,Costo
-asciugatrice.jpeg,Asciugatrice,Questa asciugatrice... &egrave; un'asciugatrice,900
+lavatrice.jpeg,Lavatrice,Se no Alfio non si veste #1,420
+asciugatrice.jpeg,Asciugatrice,Se no Alfio non si veste #2,900
 asse_da_stiro.jpeg,Asse da Stiro,Benni &egrave; in lutto perch&eacute; ha appena scoperto che dovr&agrave; cominciare a stirare,130
-#ferro_da_stiro,,,
-#pentole,,,
+ferro_da_stiro.jpeg,Ferro da stiro,Vedi asse da stiro,60
+#pentole,,Così Benni potr&agrave; mangiare la carbonara,
 #set_coltelli,,,
 #set_bicchieri,,,
 #set_posate,,,
 #set_barman,,,
 bollitore.jpeg,Bollitore,Per le 40 tisane quotidiane di Giorgio,50
-caffe.jpeg,Macchina da Caff&eacute;,Buongiornissimo!!! Kaff&eacute;&eacute;&eacute;eee&eacute;&eacute;&eacute;!?!?,70
-#centrifughe.jpeg,Centrifuga,descr1,10
-cornice_digitale.jpeg,Cornice Digitale,Tributo al GruppoRegali,100
-dyson.jpeg,Aspirapolvere Dyson v15,Cio&eacute; ha il laser per farti vedere dove &egrave; la polvere!!!!!!!!!,700
+caffe.jpeg,Macchina da Caff&eacute;,"E che fai, te ne privi?",70
+#centrifughe.jpeg,Centrifuga,boh,10
+cornice_digitale.jpeg,Cornice Digitale,Tributo al GruppoRegali&#174;,100
+dyson.jpeg,Aspirapolvere Dyson v15,Cio&eacute; parliamone&comma; ha il laser per farti vedere dove &egrave; la polvere!,700
 friggitrice.jpeg,Friggitrice,Da usare quando la nostalgia delle Marche prende il sopravvento,240
 frullatore.jpeg,Frullatore a Immersione,descr1,70
-kenwood.jpeg,Impastatrice,descr1,50
-lavatrice.jpeg,Lavatrice,Questa lavatrice... &egrave; una lavatrice,420
-#macchina_sottovuoto.jpeg,Macchina per il Sottovuoto,Per non sprecare nulla!1,10
-microonde.jpeg,Microonde,Cos&igrave; alla mattina il latte di Giorgio sar&agrave; alla temperatura perfetta,200
-#moulinex.jpeg,servizio di bicchieri,descr1,10
-#paiolo.jpeg,servizio di posate,descr1,10
-tostapane.jpeg,Tostapane,descr1,50
-tritatutto.jpeg,bollitore,descr1,40
-tv.jpeg,TV,Riuscir&agrave; Giorgio a far vedere il Signore degli Anelli a Benni?,650
+kenwood.jpeg,Impastatrice,Cos&igrave; Alfio &egrave; pi&ugrave; motivato per fare la pizza,50
+#macchina_sottovuoto.jpeg,Macchina per il Sottovuoto,E poi il ciauscolo come lo conservi?,10
+microonde.jpeg,Microonde,Cos&igrave; alla mattina il latte di Alfio sar&agrave; alla temperatura perfetta,200
+#moulinex.jpeg,Moulinex,descr1,10
+#paiolo.jpeg,Paiolo per polenta,descr1,10
+tostapane.jpeg,Tostapane,Tosta come Benni,50
+#tritatutto.jpeg,Tritatutto,Cosa cambia dal frullatore?,40
+tv.jpeg,TV,Riuscir&agrave; Alfio a far vedere il Signore degli Anelli a Benni?,650
 #vaporiera.jpeg,regalo2,descr1,40
 lego_space_shuttle.png,LEGO NASA Space Shuttle Discovery,Passatempi alternativi,180

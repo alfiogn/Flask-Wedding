@@ -1,11 +1,15 @@
 import os
 from flask import Flask, render_template, url_for, jsonify, flash, get_flashed_messages, redirect, request
 from flask_mail import Mail, Message
+from flask_mysqldb import MySQL
+import psycopg2
 import pandas as pd
 from PIL import Image
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
+
+# Mail configuration
 app.config.update(
     DEBUG=True,
     MAIL_SERVER='smtp.gmail.com',
@@ -18,6 +22,13 @@ app.config.update(
 
 mail = Mail(app)
 
+## DB configuration
+#DATABASE_URL = os.environ['DATABASE_URL']
+#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+#conn = psycopg2.connect("dbname=db1 user=postgres")
+
+#mysql = MySQL()
+#mysql.init_app(app)
 
 
 
@@ -44,13 +55,19 @@ def rsvp_email():
     babies = request.form['babies']
     notes = request.form['notes']
 
-    infotext = "Nome e cognome: {}\nE-mail: {}\nTelefono: {}\nIndirizzo: {}\nNumero adulti: {}\nNumero bambini: {}\nNumero neonati: {}\nEventuali note: {}".format(name, email, phone, address, adults, kids, babies, notes)
+    infotext = """Nome e cognome: {}\n
+                  E-mail: {}\n
+                  Telefono: {}\n
+                  Indirizzo: {}\n
+                  Numero adulti: {}\n
+                  Numero bambini: {}\n
+                  Numero neonati: {}\n
+                  Eventuali note: {}""".format(name, email, phone, address, adults, kids, babies, notes)
     with app.app_context():
         msg1 = Message(subject="Nuovo RSVP ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=app.config.get("MAIL_USERNAME").split(),
                       body=infotext)
-
         mail.send(msg1)
 
         msg2 = Message(subject="Matrimonio Giorgio e Benni",
@@ -58,7 +75,6 @@ def rsvp_email():
                       recipients=[email],
                       body="Grazie per la tua conferma!\n\nCi vediamo al matrimonio!" +\
                               "\n\n<---- LE TUE RISPOSTE ---->\n"+infotext)
-
         mail.send(msg2)
     return 'OK'
 
@@ -71,8 +87,13 @@ def send_message():
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=app.config.get("MAIL_USERNAME").split(),
                       body=text)
-
         mail.send(msg1)
+
+        msg2 = Message(subject="Grazie!",
+                      sender=app.config.get("MAIL_USERNAME"),
+                      recipients=[email],
+                      body="Grazie per il tuo regalo!\n\nCi vediamo al matrimonio!")
+        mail.send(msg2)
     return 'OK'
 
 
