@@ -126,7 +126,7 @@ def makePhotoGallery():
 def makeListaNozze():
     basedir = os.path.dirname(os.path.abspath(__file__))
     res = pd.read_csv(basedir+"/static/images/listanozze/listanozze.csv",
-            sep=",", comment="#", header=0, names=["File", "Nome", "Descrizione", "Costo"])
+            sep=",", header=0, names=["File", "Nome", "Descrizione", "Costo"])
     print(res)
     return jsonify(res.to_json(orient='records'))
 
