@@ -22,13 +22,28 @@ app.config.update(
 
 mail = Mail(app)
 
-## DB configuration
-#DATABASE_URL = os.environ['DATABASE_URL']
-#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-#conn = psycopg2.connect("dbname=db1 user=postgres")
+# DB configuration
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
-#mysql = MySQL()
-#mysql.init_app(app)
+mysql = MySQL()
+mysql.init_app(app)
+
+
+#def fetch_from_DB(table):
+#    cursor = conn.cursor()
+#    cursor.execute("""SELECT ID, NAME, PREZZO, REGALATO FROM lista
+#                      WHERE ID = {}""".format(present_id))
+#    ret = cursor.fetchone()
+#    cursor.close()
+#    return ret
+
+def insert_DB_invitati(infolist):
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO lista_invitati
+                      VALUES ('{}', '{}', '{}', '{}', {}, {}, {}, '{}')""".format(*infolist))
+    conn.commit()
+    cursor.close()
 
 
 
@@ -54,27 +69,31 @@ def rsvp_email():
     kids = request.form['kids']
     babies = request.form['babies']
     notes = request.form['notes']
+    info = [name, email, phone, address, adults, kids, babies, notes]
+    infostring = "Nome e cognome: {}\n" + \
+                 "E-mail: {}\n" + \
+                 "Telefono: {}\n" + \
+                 "Indirizzo: {}\n" + \
+                 "Numero adulti: {}\n" + \
+                 "Numero bambini: {}\n" + \
+                 "Numero neonati: {}\n" + \
+                 "Eventuali note: {}"
 
-    infotext = """Nome e cognome: {}\n
-                  E-mail: {}\n
-                  Telefono: {}\n
-                  Indirizzo: {}\n
-                  Numero adulti: {}\n
-                  Numero bambini: {}\n
-                  Numero neonati: {}\n
-                  Eventuali note: {}""".format(name, email, phone, address, adults, kids, babies, notes)
+    insert_DB_invitati(info)
+
     with app.app_context():
         msg1 = Message(subject="Nuovo RSVP ricevuto!",
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=app.config.get("MAIL_USERNAME").split(),
-                      body=infotext)
+                      body=infostring.format(*info))
         mail.send(msg1)
 
         msg2 = Message(subject="Matrimonio Giorgio e Benni",
                       sender=app.config.get("MAIL_USERNAME"),
                       recipients=[email],
-                      body="Grazie per la tua conferma!\n\nCi vediamo al matrimonio!" +\
-                              "\n\n<---- LE TUE RISPOSTE ---->\n"+infotext)
+                      body="Grazie per la tua conferma!\n\nCi vediamo al matrimonio!\n\n" +
+                           "Giorgio e Benni <3" +
+                           "\n\n<---- LE TUE RISPOSTE ---->\n"+infostring.format(*info))
         mail.send(msg2)
     return 'OK'
 
