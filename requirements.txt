@@ -9,3 +9,4 @@ flatbuffers==1.12
 gunicorn==20.0.4
 pandas==1.2.3
 Pillow==8.1.1
+psycopg2==2.8.6
