@@ -42,6 +42,7 @@ def insert_DB_invitati(infolist):
     cursor = conn.cursor()
     cursor.execute("""INSERT INTO lista_invitati
                       VALUES ('{}', '{}', '{}', '{}', {}, {}, {}, '{}')""".format(*infolist))
+    print(infolist)
     conn.commit()
     cursor.close()
 
