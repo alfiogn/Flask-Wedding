@@ -29,6 +29,7 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 mysql = MySQL()
 mysql.init_app(app)
 
+error_log = open("error_log", "a")
 
 #def fetch_from_DB(table):
 #    cursor = conn.cursor()
@@ -40,8 +41,11 @@ mysql.init_app(app)
 
 def insert_DB_invitati(infolist):
     cursor = conn.cursor()
-    cursor.execute("""INSERT INTO lista_invitati
-                      VALUES ('{}', '{}', '{}', '{}', {}, {}, {}, '{}')""".format(*infolist))
+    try:
+        cursor.execute("""INSERT INTO lista_invitati
+                          VALUES ('{}', '{}', '{}', '{}', {}, {}, {}, '{}')""".format(*infolist))
+    except:
+        error_log.write(" ".join(infolist))
     print(infolist)
     conn.commit()
     cursor.close()
