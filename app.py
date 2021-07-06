@@ -45,7 +45,7 @@ def insert_DB_invitati(infolist):
         cursor.execute("""INSERT INTO lista_invitati
                           VALUES ('{}', '{}', '{}', '{}', {}, {}, {}, '{}')""".format(*infolist))
     except:
-        error_log.write(" ".join(infolist))
+        error_log.write(" ".join([str(i) for i in infolist]))
     print(infolist)
     conn.commit()
     cursor.close()
