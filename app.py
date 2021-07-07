@@ -29,8 +29,6 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 mysql = MySQL()
 mysql.init_app(app)
 
-error_log = open("error_log", "a")
-
 #def fetch_from_DB(table):
 #    cursor = conn.cursor()
 #    cursor.execute("""SELECT ID, NAME, PREZZO, REGALATO FROM lista
@@ -46,7 +44,8 @@ def insert_DB_invitati(infolist):
                           VALUES ('{}', '{}', '{}', '{}', {}, {}, {}, '{}')""".format(*infolist))
     except Exception as error:
         print("\n\n!!!!!!!!!!!!! ERROR !!!!!!!!!!!!!!!!!\n\n", error)
-        error_log.write(" ".join([str(i) for i in infolist]))
+        cursor.execute("""INSERT INTO errori 
+                          VALUES ('{}')""".format(infolist[0].replace("'", "")))
     print(infolist)
     conn.commit()
     cursor.close()
