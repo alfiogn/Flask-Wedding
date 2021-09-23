@@ -35,7 +35,6 @@ function sendRsvp() {
     var babies = $('#Babies').val();
     var notes = $('#Notes').val();
 
-
     $.ajax({
         type: "POST",
         url: "/rsvp_email",
