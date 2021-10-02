@@ -8,7 +8,6 @@ from PIL import Image
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
-
 # Mail configuration
 app.config.update(
     DEBUG=True,
