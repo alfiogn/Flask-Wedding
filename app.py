@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, jsonify, flash, get_flashed_messages, redirect, request
+from flask import Flask, render_template, url_for, jsonify, flash, get_flashed_messages, redirect, request, send_from_directory, send_file, make_response
 from flask_mail import Mail, Message
 from flask_mysqldb import MySQL
 import psycopg2
@@ -17,6 +17,7 @@ app.config.update(
     MAIL_USE_SSL=True, #False,
     MAIL_USERNAME=os.environ['MAIL_USERNAME'],
     MAIL_PASSWORD=os.environ['MAIL_PASSWORD'],
+    # UPLOAD_FOLDER='/static'
 )
 
 mail = Mail(app)
@@ -57,6 +58,10 @@ def home():
     return render_template('home.html', page_title=" - Home")
 
 
+@app.route('/mass', methods=['GET', 'POST'])
+def mass():
+    basedir = os.path.dirname(os.path.abspath(__file__))
+    return send_file(basedir+'/static/messa.pdf', as_attachment=False, mimetype='application/pdf')
 
 
 @app.route('/rsvp')
