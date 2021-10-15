@@ -58,8 +58,8 @@ def home():
     return render_template('home.html', page_title=" - Home")
 
 
-@app.route('/mass', methods=['GET', 'POST'])
-def mass():
+@app.route('/cerimonia', methods=['GET', 'POST'])
+def cerimonia():
     basedir = os.path.dirname(os.path.abspath(__file__))
     return send_file(basedir+'/static/messa.pdf', as_attachment=False, mimetype='application/pdf')
 
